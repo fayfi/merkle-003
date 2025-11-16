@@ -82,4 +82,5 @@ class MerkleTree:
 
 
 def verify_proof(leaf: Any, proof: List[Dict[str, str]], root_hex: str) -> bool:
+    """Verify a single leaf's inclusion proof."""
     return MerkleTree.verify_proof(leaf, proof, root_hex)
