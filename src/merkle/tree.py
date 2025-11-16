@@ -18,6 +18,7 @@ def _to_bytes(x: Any) -> bytes:
 
 
 def _hash(data: bytes) -> bytes:
+    """Hash data using SHA-256 algorithm."""
     return hashlib.sha256(data).digest()
 
 
