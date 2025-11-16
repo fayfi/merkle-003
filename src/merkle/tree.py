@@ -83,3 +83,8 @@ class MerkleTree:
 
 def verify_proof(leaf: Any, proof: List[Dict[str, str]], root_hex: str) -> bool:
     return MerkleTree.verify_proof(leaf, proof, root_hex)
+
+
+def batch_verify(leaves: List[Any], proofs: List[List[Dict[str, str]]], root_hex: str) -> List[bool]:
+    """Batch verify multiple leaves and their proofs against the same root."""
+    return [MerkleTree.verify_proof(leaf, proof, root_hex) for leaf, proof in zip(leaves, proofs)]
